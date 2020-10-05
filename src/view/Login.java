@@ -21,7 +21,7 @@ public class Login {
 		login = JOptionPane.showInputDialog("Insira o seu login: ");
 		senha = JOptionPane.showInputDialog("Insira o sua senha: ");
 		Permissao = controlBanco.ValidarLoginSenhaTXT(login, senha);
-		pilha = (EstruturaEstatica<T>) controlBanco.ValidarPermissoesTXT(Permissao);
+		controlBanco.ValidarPermissoesTXT(Permissao);
 		if(Permissao != null && Permissao !="0") {
 			menu.ViewMenu(Permissao);
 		}else {

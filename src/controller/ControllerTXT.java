@@ -49,7 +49,7 @@ public class ControllerTXT {
 		return permissao;
 	}
 
-	public <T> Pilha<String> ValidarPermissoesTXT(String permissao)throws IOException {
+	public void ValidarPermissoesTXT(String permissao)throws IOException {
 		nomeArq = "Permissoes.txt";
 		pilha = (Pilha<String>) BancoModel.LerPerm(nomeArq, pilha);
 		int i =0;
@@ -71,6 +71,6 @@ public class ControllerTXT {
 				i++;
 			}
 		}while(i<Vet.length);
-		return pilha;
+		
 	}
 }
