@@ -22,7 +22,7 @@ public class Login {
 		senha = JOptionPane.showInputDialog("Insira o sua senha: ");
 		Permissao = controlBanco.ValidarLoginSenhaTXT(login, senha);
 		pilha = (EstruturaEstatica<T>) controlBanco.ValidarPermissoesTXT(Permissao);
-		if(Permissao != null) {
+		if(Permissao != null && Permissao !="0") {
 			menu.ViewMenu(Permissao);
 		}else {
 			JOptionPane.showMessageDialog(null, "login ou senha incorretos, permissão negada!");

@@ -28,6 +28,7 @@ public class Banco {
 		String Arquivo = nomeArq;
 		BufferedReader ler = new BufferedReader(new FileReader(Arquivo));
 		String line = ler.readLine();
+		pilha.adiciona(line);
 		while (line != null) {			
 			line = ler.readLine();
 			pilha.adiciona(line);
