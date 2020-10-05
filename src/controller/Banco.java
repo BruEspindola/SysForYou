@@ -24,19 +24,19 @@ public class Banco {
 		Arq.close();
 	}
 
-	public PilhaEstatica LerPerm(String nomeArq, PilhaEstatica Pilha) throws IOException {
-		FilaDinamica<String> fila = new FilaDinamica<String>();
+	public <T> EstruturaEstatica<T> LerPerm(String nomeArq, EstruturaEstatica<T> pilha) throws IOException {		
 		String Arquivo = nomeArq;
 		BufferedReader ler = new BufferedReader(new FileReader(Arquivo));
 		String line = ler.readLine();
-		while (line != null) {
-			fila.add(line);
+		while (line != null) {			
 			line = ler.readLine();
-			System.out.println("" + line);
+			pilha.adiciona(line);
 		}
+		pilha.toString();
+		System.out.println(pilha);
 		ler.close();
 
-		return Pilha;
+		return pilha;
 	}
 
 	public String[] LerLog(String[] vet, String nomeArq) throws IOException {

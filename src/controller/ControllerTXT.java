@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 public class ControllerTXT {
 	FilaDinamica<String> fila = new FilaDinamica<String>();
-	PilhaEstatica pilha = new PilhaEstatica();
+	Pilha<String> pilha = new Pilha<String>();
 	Banco BancoModel = new Banco();
 	String loginNovo;
 	String senhaNovo;
@@ -49,9 +49,9 @@ public class ControllerTXT {
 		return permissao;
 	}
 
-	public PilhaEstatica ValidarPermissoesTXT(String permissao)throws IOException {
+	public <T> Pilha<String> ValidarPermissoesTXT(String permissao)throws IOException {
 		nomeArq = "Permissoes.txt";
-		pilha = BancoModel.LerPerm(nomeArq, pilha);
+		pilha = (Pilha<String>) BancoModel.LerPerm(nomeArq, pilha);
 		int i =0;
 		do {
 			if(fila.equals(permissao)) {
