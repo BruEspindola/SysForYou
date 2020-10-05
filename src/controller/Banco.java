@@ -33,7 +33,7 @@ public class Banco {
 			line = ler.readLine();
 			pilha.adiciona(line);
 		}
-		pilha.toString();
+		pilha.empilha(line);
 		System.out.println(pilha);
 		ler.close();
 

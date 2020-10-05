@@ -92,4 +92,12 @@ public class EstruturaEstatica<T> {
 
 		return s.toString();
 	}
-}
+
+	public Object empilha(String line) {
+		if (this.estaVazia()) {
+			return null;
+		}
+
+		return this.elementos[--tamanho];
+	}		
+	}

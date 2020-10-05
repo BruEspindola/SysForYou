@@ -11,6 +11,7 @@ public class Permissoes {
 	public void ViewPermissoes() throws IOException {
 		ControllerTXT controlBanco = new ControllerTXT();
 		FilaDinamica<String> fila = new FilaDinamica<String>();
+		
 		int opc = 0;
 		while(opc!=9) {
 			opc = Integer.parseInt(JOptionPane.showInputDialog("Menu:\n"

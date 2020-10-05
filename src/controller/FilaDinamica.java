@@ -11,6 +11,7 @@ public class FilaDinamica<T> {
 	
 	public void add(T dado) {
 		n = new NoFD<T>(dado);
+		
 		if(vazia()) {
 			this.start = n;
 		}else {
@@ -33,9 +34,9 @@ public class FilaDinamica<T> {
 
 	public String mostra() {
 		String r;
-		StringBuffer buffer = new StringBuffer();
+		StringBuffer buffer = new StringBuffer("A lista é: \n");
 		if(!vazia()) {
-			aux = this.start;
+			NoFD<T> aux = this.start;
 			while(aux!=null) {
 				buffer.append(aux.getDado() + "\n");
 				aux = aux.getProx();
@@ -43,6 +44,7 @@ public class FilaDinamica<T> {
 		}
 		r = buffer.toString();
 		return r;
+	
 	}
 
 	private boolean vazia() {

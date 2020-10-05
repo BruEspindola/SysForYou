@@ -10,9 +10,10 @@ import controller.FilaDinamica;
 
 
 public class Login {
-	@SuppressWarnings("unchecked")
+	
 	public <T> void viewLogin(EstruturaEstatica<T> pilha) throws IOException {
 		Menu menu = new Menu();
+		@SuppressWarnings("unused")
 		FilaDinamica<String> fila = new FilaDinamica<String>();
 		ControllerTXT controlBanco = new ControllerTXT();
 		String login;

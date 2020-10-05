@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 public class ControllerTXT {
 	FilaDinamica<String> fila = new FilaDinamica<String>();
 	Pilha<String> pilha = new Pilha<String>();
+	
 	Banco BancoModel = new Banco();
 	String loginNovo;
 	String senhaNovo;
@@ -49,9 +50,11 @@ public class ControllerTXT {
 		return permissao;
 	}
 
+	@SuppressWarnings("unlikely-arg-type")
 	public void ValidarPermissoesTXT(String permissao)throws IOException {
 		nomeArq = "Permissoes.txt";
 		pilha = (Pilha<String>) BancoModel.LerPerm(nomeArq, pilha);
+		
 		int i =0;
 		do {
 			if(fila.equals(permissao)) {
@@ -71,6 +74,22 @@ public class ControllerTXT {
 				i++;
 			}
 		}while(i<Vet.length);
+		CarregaFila();
+		
+	}
+
+	private void CarregaFila() {
+		String Pilha02 = "";
+		
+		while (!pilha.estaVazia()) {
+			Pilha02 += pilha.desempilha() + " ";			
+		}
+		System.out.println("Desenpilhar "+ Pilha02 +"\n ");
+		
+		
+	
+		
+		
 		
 	}
 }
