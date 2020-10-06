@@ -10,7 +10,7 @@ import controller.FilaDinamica;
 
 
 public class Login {
-	
+
 	public <T> void viewLogin(EstruturaEstatica<T> pilha) throws IOException {
 		Menu menu = new Menu();
 		@SuppressWarnings("unused")
