@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class ControllerTXT {
 	FilaDinamica<String> fila = new FilaDinamica<String>();
 	Pilha<String> pilha = new Pilha<String>();
-
+	
 	Banco BancoModel = new Banco();
 	String loginNovo;
 	String senhaNovo;
