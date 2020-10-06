@@ -8,13 +8,13 @@ import controller.ControllerTXT;
 import controller.FilaDinamica;
 
 public class Permissoes {
-	public void ViewPermissoes() throws IOException {
+	public void ViewPermissoes(String permissao) throws IOException {
 		ControllerTXT controlBanco = new ControllerTXT();
 		FilaDinamica<String> fila = new FilaDinamica<String>();
-		
+		Menu voltar = new Menu();
 		int opc = 0;
 		while(opc!=9) {
-			opc = Integer.parseInt(JOptionPane.showInputDialog("Menu:\n"
+			opc = Integer.parseInt(JOptionPane.showInputDialog("Menu permissões:\n"
 					+ "1- Adicionar \n"
 					+ "2- Remover \n"
 					+ "3- Mostrar \n"
@@ -34,8 +34,10 @@ public class Permissoes {
 			case 4:
 				controlBanco.GravTXTPermissoes(fila.mostra());
 				break;
-			case 9: System.out.println("Saindo");
-			break;
+			case 9: 
+				System.out.println("Saindo");
+				voltar.ViewMenu(permissao);
+				break;
 			default: System.err.println("Opc errada");
 			}
 		}
