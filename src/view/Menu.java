@@ -11,7 +11,7 @@ public class Menu {
 	public void ViewMenu(String permissao) throws IOException {
 		MenuController controlMenu = new MenuController();
 		int escolha;
-		//JOptionPane.showMessageDialog(null, "Tamo no menu, sua permissão é: " + permissao);
+		// JOptionPane.showMessageDialog(null, "Tamo no menu, sua permissão é: " + permissao);
 		switch(permissao) {
 		case "GETI":
 			escolha= Integer.parseInt(JOptionPane.showInputDialog("Menu:\n"
