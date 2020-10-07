@@ -34,7 +34,6 @@ public class Banco {
 			pilha.adiciona(line);
 		}
 		pilha.empilha(line);
-		System.out.println(pilha);
 		ler.close();
 
 		return pilha;

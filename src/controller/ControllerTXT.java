@@ -82,8 +82,8 @@ public class ControllerTXT {
 		String Pilha02 = "";
 
 		while (!pilha.estaVazia()) {
-			Pilha02 += pilha.desempilha() + " ";
+			Pilha02 += pilha.desempilha() + "\n";
 		}
-		System.out.println("Desenpilhar " + Pilha02 + "\n ");
+		fila.setF(Pilha02);
 	}
 }

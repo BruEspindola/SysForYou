@@ -29,7 +29,8 @@ public class Permissoes {
 				System.out.println("O cargo " + fila.remove() + " foi removido");
 				break;
 			case 3: 
-				System.out.println(fila.mostra());
+				System.out.println(fila.getF());
+				
 				break;
 			case 4:
 				controlBanco.GravTXTPermissoes(fila.mostra());
