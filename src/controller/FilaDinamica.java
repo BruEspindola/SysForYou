@@ -8,12 +8,10 @@ public class FilaDinamica<T> {
 	
 	public FilaDinamica() {
 		this.start = null;
-		this.r = r;
 	}
 	
 	public void add(T dado) {
 		n = new NoFD<T>(dado);
-		
 		if(vazia()) {
 			this.start = n;
 		}else {
@@ -52,11 +50,12 @@ public class FilaDinamica<T> {
 		return this.start == null;
 	}
 	
-	public String getF() {
+	public String getFilaDinamica() {
+		System.out.println(r);
 		return r;
 	}
 
-	public void setF(String Pilha02) {
+	public void setFilaDinamica(String Pilha02) {
 		this.r = Pilha02;
 		System.out.println(r);
 	}

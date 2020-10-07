@@ -11,10 +11,8 @@ import controller.FilaDinamica;
 
 public class Login {
 
-	public <T> void viewLogin(EstruturaEstatica<T> pilha) throws IOException {
+	public void viewLogin() throws IOException {
 		Menu menu = new Menu();
-		@SuppressWarnings("unused")
-		FilaDinamica<String> fila = new FilaDinamica<String>();
 		ControllerTXT controlBanco = new ControllerTXT();
 		String login;
 		String senha;

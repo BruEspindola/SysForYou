@@ -50,14 +50,13 @@ public class ControllerTXT {
 		return permissao;
 	}
 
-	@SuppressWarnings("unlikely-arg-type")
 	public void ValidarPermissoesTXT(String permissao) throws IOException {
 		nomeArq = "Permissoes.txt";
 		pilha = (Pilha<String>) BancoModel.LerPerm(nomeArq, pilha);
-
+		CarregaFila();
 		int i = 0;
 		do {
-			if (fila.equals(permissao)) {
+			if (pilha.equals(permissao)) {
 				switch (permissao) {
 				case "GETI":
 					JOptionPane.showMessageDialog(null, "Bem vindo coordenado do GETI");
@@ -74,16 +73,14 @@ public class ControllerTXT {
 				i++;
 			}
 		} while (i < Vet.length);
-		CarregaFila();
-
 	}
 
 	private void CarregaFila() {
-		String Pilha02 = "";
-
+		String Pilha02 = "\n";
 		while (!pilha.estaVazia()) {
 			Pilha02 += pilha.desempilha() + "\n";
 		}
-		fila.setF(Pilha02);
+		fila.setFilaDinamica(Pilha02);
+		System.out.println(fila.getFilaDinamica());
 	}
 }
