@@ -1,10 +1,9 @@
 package controller;
 
 public class FilaDinamica<T> {
-	NoFD<T> start;
-	NoFD<T> aux;
-	NoFD<T> n;
-	String r;
+	private NoFD<T> start;
+	private NoFD<T> aux;
+	private NoFD<T> n;
 	
 	public FilaDinamica() {
 		this.start = null;
@@ -33,6 +32,7 @@ public class FilaDinamica<T> {
 	}
 
 	public String mostra() {
+		String r;
 		StringBuffer buffer = new StringBuffer();
 		if(!vazia()) {
 			NoFD<T> aux = this.start;
@@ -45,19 +45,18 @@ public class FilaDinamica<T> {
 		return r;
 	
 	}
+	
+	//metodo para colocar a pilha, recebe uma estatica, esvazia ela colocando
+	//na fila
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public void addPilha(Pilha pilha) {
+		while(!pilha.estaVazia()) {
+			add((T) pilha.desempilha());
+		}
+	}
 
 	private boolean vazia() {
 		return this.start == null;
-	}
-	
-	public String getFilaDinamica() {
-		System.out.println(r);
-		return r;
-	}
-
-	public void setFilaDinamica(String Pilha02) {
-		this.r = Pilha02;
-		System.out.println(r);
 	}
 
 }

@@ -12,7 +12,7 @@ public class Permissoes {
 		ControllerTXT controlBanco = new ControllerTXT();
 		FilaDinamica<String> fila = new FilaDinamica<String>();
 		Menu voltar = new Menu();
-		fila.getFilaDinamica();
+		//fila.getFilaDinamica();
 		int opc = 0;
 		while(opc!=9) {
 			opc = Integer.parseInt(JOptionPane.showInputDialog("Menu permissões:\n"

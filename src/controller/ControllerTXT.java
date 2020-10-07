@@ -76,11 +76,7 @@ public class ControllerTXT {
 	}
 
 	private void CarregaFila() {
-		String Pilha02 = "\n";
-		while (!pilha.estaVazia()) {
-			Pilha02 += pilha.desempilha() + "\n";
-		}
-		fila.setFilaDinamica(Pilha02);
-		System.out.println(fila.getFilaDinamica());
+		fila.addPilha(pilha);
+		System.out.println(fila.mostra());
 	}
 }
