@@ -33,8 +33,8 @@ public class Usuarios {
 				//mostrar o conteudo da fila dinamica(os niveis de permissão
 				//perm = JOptionPane.showInputDialog("Insira o nivel de permissão para este usuario:");
 				//if(perm == permissão cadastrada no banco){
-				classeAbstrata formulario = new classeAbstrata(login, senha, perm);
-				pilha.push(formulario);
+				//classeAbstrata formulario = new classeAbstrata(login, senha, perm);
+				//pilha.push(formulario);
 				
 				//}else{
 				break;
