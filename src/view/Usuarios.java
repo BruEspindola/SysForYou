@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 
 import controller.PilhaDinamica;
+import controller.classeAbstrata;
 
 
 
@@ -13,6 +14,9 @@ public class Usuarios {
 	public void ViewUsuarios(String permissao) throws IOException {
 		PilhaDinamica pilha = new PilhaDinamica();
 		Menu voltar = new Menu();
+		String login;
+		String senha;
+		String perm;
 		int esc = 0;
 		while(esc!=9) {
 			esc = Integer.parseInt(JOptionPane.showInputDialog("Menu usuarios:\n"
@@ -23,10 +27,16 @@ public class Usuarios {
 					+ "9- Sair \n"));
 			switch(esc) {
 			case 1: 
-				String dado = JOptionPane.showInputDialog("Insira um cargo");
-				//Colocar a barudega aqui 
-				pilha.push(dado);
-				//
+				login = JOptionPane.showInputDialog("Insira um novo login:");
+				senha = JOptionPane.showInputDialog("Insira uma nova senha:");
+				
+				//mostrar o conteudo da fila dinamica(os niveis de permissão
+				//perm = JOptionPane.showInputDialog("Insira o nivel de permissão para este usuario:");
+				//if(perm == permissão cadastrada no banco){
+				classeAbstrata formulario = new classeAbstrata(login, senha, perm);
+				pilha.push(formulario);
+				
+				//}else{
 				break;
 			case 2:
 				System.out.println("O cargo " + pilha.pop() + " foi removido");
