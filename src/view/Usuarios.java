@@ -34,7 +34,7 @@ public class Usuarios {
 				senha = JOptionPane.showInputDialog("Insira uma nova senha:");
 				p.mostrar();
 				perm = JOptionPane.showInputDialog("Insira o nivel de permissão para este usuario:");
-				//ATÉ AQUI TA TUDO CERTO CARAIO!!! IIIIIHAAAAA
+				  //ATÉ AQUI TA TUDO CERTO CARAIO!!! IIIIIHAAAAA
 				if(p.equals(perm)) {									//if(perm == permissão cadastrada no banco){
 				classeAbstrata formulario = new classeAbstrata(login, senha, perm);
 				//pilha.push(formulario);
