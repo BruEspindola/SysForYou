@@ -48,11 +48,12 @@ public class ControllerTXT {
 		return permissao;
 	}
 
-	public void CarregarPilhaStatica() throws IOException {
+	public PilhaEstatica CarregarPilhaStatica() throws IOException {
 		nomeArq = "Permissoes.txt";
 		PilhaEstatica p = new PilhaEstatica();
 		p =  BancoModel.LerPerm(nomeArq, p);
 		p.mostrar();
+		return p;
 	}
 	
 	public static void CarregarFilaStatica() throws IOException {

@@ -4,23 +4,25 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
+import controller.PilhaDinamica;
 import controller.ControllerTXT;
-import controller.PilhaEstatica;
-import controller.classeAbstrata;
+
+
 
 
 
 public class Usuarios {
 
-	@SuppressWarnings("unlikely-arg-type")
 	public void ViewUsuarios(String permissao) throws IOException {
 		ControllerTXT controlTxT = new ControllerTXT();
-		PilhaEstatica p = new PilhaEstatica();
+		StringBuffer buffer = new StringBuffer();
+		PilhaDinamica PD = new PilhaDinamica();
 		Menu voltar = new Menu();
 		String login;
 		String senha;
 		String perm;
 		int esc = 0;
+		int i=0;
 		while(esc!=9) {
 			esc = Integer.parseInt(JOptionPane.showInputDialog("Menu usuarios:\n"
 					+ "1- Adicionar \n"
@@ -32,21 +34,19 @@ public class Usuarios {
 			case 1: 
 				login = JOptionPane.showInputDialog("Insira um novo login:");
 				senha = JOptionPane.showInputDialog("Insira uma nova senha:");
-				p.mostrar();
+				controlTxT.CarregarPilhaStatica();
 				perm = JOptionPane.showInputDialog("Insira o nivel de permissão para este usuario:");
-				  //ATÉ AQUI TA TUDO CERTO CARAIO!!! IIIIIHAAAAA
-				if(p.equals(perm)) {									//if(perm == permissão cadastrada no banco){
-				classeAbstrata formulario = new classeAbstrata(login, senha, perm);
-				//pilha.push(formulario);
-				JOptionPane.showMessageDialog(null, "Foi aqui em, passou delicia");
-				}
-				JOptionPane.showMessageDialog(null, "Foi não, funcionou delicia");
+				buffer.append(login +"\n");
+				buffer.append(senha +"\n");
+				buffer.append(perm +"\n");
+				PD.empilha(buffer);
+				System.out.println(PD.percorre());
 				break;
 			case 2:
-				
+
 				break;
 			case 3: 
-				
+				System.out.println(PD.percorre());
 				break;
 			case 4:
 
