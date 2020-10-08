@@ -52,5 +52,7 @@ public class ControllerTXT {
 		nomeArq = "Permissoes.txt";
 		PilhaEstatica p = new PilhaEstatica();
 		p =  BancoModel.LerPerm(nomeArq, p);
+		p.mostrar();
+
 	}
 }

@@ -35,7 +35,6 @@ public class Banco {
 			line = ler.readLine();
 		}
 		ler.close();
-		System.out.println(""+p);
 		return p;
 	}
 
