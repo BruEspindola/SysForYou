@@ -9,7 +9,7 @@ public class ControllerTXT {
 	static Banco BancoModel = new Banco();
 	String Vet[] = new String[6];
 	static String nomeArq;
-	
+
 	public ControllerTXT() {
 		super();
 	}
@@ -51,11 +51,12 @@ public class ControllerTXT {
 		p.mostrar();
 		return p;
 	}
-	
+
 	public static void CarregarFilaStatica(StringBuffer buffer) throws IOException {
-		//nomeArq = "Login&Senha.txt";
+		nomeArq = "Login&Senha.txt";
 		FilaEstatica fila = new FilaEstatica();
-		fila.insere(buffer);		//BancoModel.LerCarregaLog(fila, nomeArq);
+		buffer = BancoModel.LerCarregaLog(buffer, nomeArq);
+		fila.insere(buffer);		
 		JOptionPane.showMessageDialog(null, fila.retira());
 	}
 }

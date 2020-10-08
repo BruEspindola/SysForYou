@@ -35,18 +35,18 @@ public class Banco {
 		return p;
 	}
 
-	//public FilaEstatica LerCarregaLog(FilaEstatica fila, String nomeArq) throws IOException {
-	//String Arquivo = nomeArq;
-	//BufferedReader ler = new BufferedReader(new FileReader(Arquivo));
-	//String line =ler.readLine();
-	//while(line!=null) {
-	//fila.insere(line);
-	//line = ler.readLine();
-	//}
-	//ler.close();
-	//return fila;
-	//}
-	
+	public StringBuffer LerCarregaLog(StringBuffer buffer, String nomeArq) throws IOException {
+		String Arquivo = nomeArq;
+		BufferedReader ler = new BufferedReader(new FileReader(Arquivo));
+		String line =ler.readLine();
+		while(line!=null) {
+			buffer.append(line + "\n");
+			line = ler.readLine();
+		}
+		ler.close();
+		return buffer;
+	}
+
 	public String[] LerLog (String[] vet, String nomeArq) throws IOException{
 		String Arquivo = nomeArq;
 		BufferedReader ler = new BufferedReader(new FileReader(Arquivo));
