@@ -6,11 +6,11 @@ import javax.swing.JOptionPane;
 
 public class ControllerTXT {
 
-	Banco BancoModel = new Banco();
+	static Banco BancoModel = new Banco();
 	String loginNovo;
 	String senhaNovo;
 	String Vet[] = new String[6];
-	String nomeArq;
+	static String nomeArq;
 	
 	public ControllerTXT() {
 		super();
@@ -53,6 +53,12 @@ public class ControllerTXT {
 		PilhaEstatica p = new PilhaEstatica();
 		p =  BancoModel.LerPerm(nomeArq, p);
 		p.mostrar();
-
+	}
+	
+	public static void CarregarFilaStatica() throws IOException {
+		nomeArq = "Login&Senha.txt";
+		FilaEstatica fila = new FilaEstatica();
+		fila = BancoModel.LerCarregaLog(fila, nomeArq);
+		JOptionPane.showMessageDialog(null, fila.retira());
 	}
 }

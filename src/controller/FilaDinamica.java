@@ -4,11 +4,11 @@ public class FilaDinamica<T> {
 	private NoFD<T> start;
 	private NoFD<T> aux;
 	private NoFD<T> n;
-	
+
 	public FilaDinamica() {
 		this.start = null;
 	}
-	
+
 	public void add(T dado) {
 		n = new NoFD<T>(dado);
 		if(vazia()) {
@@ -43,17 +43,8 @@ public class FilaDinamica<T> {
 		}
 		r = buffer.toString();
 		return r;
-	
+
 	}
-	
-	//metodo para colocar a pilha, recebe uma estatica, esvazia ela colocando
-	//na fila
-	//@SuppressWarnings({ "unchecked", "rawtypes" })
-	//public void addPilha(Pilha pilha) {
-	//while(!pilha.estaVazia()) {
-	//add((T) pilha.desempilha());
-	//}
-	//}
 
 	private boolean vazia() {
 		return this.start == null;

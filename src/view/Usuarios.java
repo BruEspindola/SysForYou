@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
-
+import controller.ControllerTXT;
 import controller.classeAbstrata;
 
 
@@ -12,6 +12,7 @@ import controller.classeAbstrata;
 public class Usuarios {
 
 	public void ViewUsuarios(String permissao) throws IOException {
+		ControllerTXT controlTxT = new ControllerTXT();
 		Menu voltar = new Menu();
 		String login;
 		String senha;
@@ -28,9 +29,8 @@ public class Usuarios {
 			case 1: 
 				login = JOptionPane.showInputDialog("Insira um novo login:");
 				senha = JOptionPane.showInputDialog("Insira uma nova senha:");
-				
-				//mostrar o conteudo da fila dinamica(os niveis de permissão
-				//perm = JOptionPane.showInputDialog("Insira o nivel de permissão para este usuario:");
+				ControllerTXT.CarregarFilaStatica(); //mostrar o conteudo da fila dinamica(os niveis de permissão
+				perm = JOptionPane.showInputDialog("Insira o nivel de permissão para este usuario:");
 				//if(perm == permissão cadastrada no banco){
 				//classeAbstrata formulario = new classeAbstrata(login, senha, perm);
 				//pilha.push(formulario);
