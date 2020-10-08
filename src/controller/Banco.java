@@ -6,15 +6,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.swing.JOptionPane;
-
-
 public class Banco {
 
-	public void GravarLoginSenha(String loginNovo, String senhaNovo) throws IOException {
+	public void GravarLoginSenha(StringBuffer buffer) throws IOException {
 		FileWriter Arq = new FileWriter("Login&Senha.txt");
 		PrintWriter GravArq = new PrintWriter(Arq);
-		GravArq.printf(loginNovo + "\n" + senhaNovo + "\n");
+		GravArq.printf(buffer + "\n");
 		Arq.close();
 
 	}
@@ -38,17 +35,17 @@ public class Banco {
 		return p;
 	}
 
-	public FilaEstatica LerCarregaLog(FilaEstatica fila, String nomeArq) throws IOException {
-		String Arquivo = nomeArq;
-		BufferedReader ler = new BufferedReader(new FileReader(Arquivo));
-		String line =ler.readLine();
-		while(line!=null) {
-			fila.insere(line);
-			line = ler.readLine();
-		}
-		ler.close();
-		return fila;
-	}
+	//public FilaEstatica LerCarregaLog(FilaEstatica fila, String nomeArq) throws IOException {
+	//String Arquivo = nomeArq;
+	//BufferedReader ler = new BufferedReader(new FileReader(Arquivo));
+	//String line =ler.readLine();
+	//while(line!=null) {
+	//fila.insere(line);
+	//line = ler.readLine();
+	//}
+	//ler.close();
+	//return fila;
+	//}
 	
 	public String[] LerLog (String[] vet, String nomeArq) throws IOException{
 		String Arquivo = nomeArq;

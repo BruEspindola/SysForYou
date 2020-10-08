@@ -7,8 +7,6 @@ import javax.swing.JOptionPane;
 public class ControllerTXT {
 
 	static Banco BancoModel = new Banco();
-	String loginNovo;
-	String senhaNovo;
 	String Vet[] = new String[6];
 	static String nomeArq;
 	
@@ -16,10 +14,8 @@ public class ControllerTXT {
 		super();
 	}
 
-	public void GravTXTLoginSenha() throws IOException {
-		loginNovo = "adm";
-		senhaNovo = "123";
-		BancoModel.GravarLoginSenha(loginNovo, senhaNovo);
+	public void GravTXTLoginSenha(StringBuffer buffer) throws IOException {
+		BancoModel.GravarLoginSenha(buffer);
 
 	}
 
@@ -56,10 +52,10 @@ public class ControllerTXT {
 		return p;
 	}
 	
-	public static void CarregarFilaStatica() throws IOException {
-		nomeArq = "Login&Senha.txt";
+	public static void CarregarFilaStatica(StringBuffer buffer) throws IOException {
+		//nomeArq = "Login&Senha.txt";
 		FilaEstatica fila = new FilaEstatica();
-		fila = BancoModel.LerCarregaLog(fila, nomeArq);
+		fila.insere(buffer);		//BancoModel.LerCarregaLog(fila, nomeArq);
 		JOptionPane.showMessageDialog(null, fila.retira());
 	}
 }

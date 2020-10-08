@@ -26,9 +26,10 @@ public class Usuarios {
 		while(esc!=9) {
 			esc = Integer.parseInt(JOptionPane.showInputDialog("Menu usuarios:\n"
 					+ "1- Adicionar \n"
-					+ "2- Remover \n"
+					+ "2- Desempilhar \n"
 					+ "3- Mostrar \n"
 					+ "4- Gravar no Banco \n"
+					+ "5- Mostrar itens cadastrados no banco \n"
 					+ "9- Sair \n"));
 			switch(esc) {
 			case 1: 
@@ -40,16 +41,18 @@ public class Usuarios {
 				buffer.append(senha +"\n");
 				buffer.append(perm +"\n");
 				PD.empilha(buffer);
-				System.out.println(PD.percorre());
 				break;
 			case 2:
-
+				System.out.println(PD.desempilha());
 				break;
 			case 3: 
 				System.out.println(PD.percorre());
 				break;
 			case 4:
-
+				controlTxT.GravTXTLoginSenha(buffer);
+				break;
+			case 5:
+				ControllerTXT.CarregarFilaStatica(buffer);
 				break;
 			case 9: System.out.println("Saindo");
 			voltar.ViewMenu(permissao);

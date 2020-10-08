@@ -13,11 +13,11 @@ public class FilaEstatica {
 		total = 0;
 	}
 	
-	public void insere(String line) {
+	public void insere(StringBuffer buffer) {
 		if (isFull()) {
 			throw new RuntimeException("Fila Cheia! N�o da pra inserir mais nada!");
 		}
-		objetos[ultimo] = line;
+		objetos[ultimo] = buffer;
 		ultimo = (ultimo +1) % objetos.length;
 		total++;
 	}
