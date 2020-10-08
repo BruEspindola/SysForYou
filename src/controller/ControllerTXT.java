@@ -5,23 +5,17 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 
 public class ControllerTXT {
-	FilaDinamica<String> fila = new FilaDinamica<String>();
-	Pilha<String> pilha = new Pilha<String>();
 
-	Banco BancoModel = new Banco();
-	String loginNovo;
-	String senhaNovo;
+	static Banco BancoModel = new Banco();
 	String Vet[] = new String[6];
-	String nomeArq;
+	static String nomeArq;
 
 	public ControllerTXT() {
 		super();
 	}
 
-	public void GravTXTLoginSenha() throws IOException {
-		loginNovo = "adm";
-		senhaNovo = "123";
-		BancoModel.GravarLoginSenha(loginNovo, senhaNovo);
+	public void GravTXTLoginSenha(StringBuffer buffer) throws IOException {
+		BancoModel.GravarLoginSenha(buffer);
 
 	}
 
@@ -50,40 +44,19 @@ public class ControllerTXT {
 		return permissao;
 	}
 
-	@SuppressWarnings("unlikely-arg-type")
-	public void ValidarPermissoesTXT(String permissao) throws IOException {
+	public PilhaEstatica CarregarPilhaStatica() throws IOException {
 		nomeArq = "Permissoes.txt";
-		pilha = (Pilha<String>) BancoModel.LerPerm(nomeArq, pilha);
-
-		int i = 0;
-		do {
-			if (fila.equals(permissao)) {
-				switch (permissao) {
-				case "GETI":
-					JOptionPane.showMessageDialog(null, "Bem vindo coordenado do GETI");
-					break;
-				case "CPS":
-					JOptionPane.showMessageDialog(null, "Bem vindo membro do CPS");
-					break;
-				case "CRA":
-					JOptionPane.showMessageDialog(null, "Bem vindo membro do CRA");
-					break;
-				}
-				i += 3;
-			} else {
-				i++;
-			}
-		} while (i < Vet.length);
-		CarregaFila();
-
+		PilhaEstatica p = new PilhaEstatica();
+		p =  BancoModel.LerPerm(nomeArq, p);
+		p.mostrar();
+		return p;
 	}
 
-	private void CarregaFila() {
-		String Pilha02 = "";
-
-		while (!pilha.estaVazia()) {
-			Pilha02 += pilha.desempilha() + " ";
-		}
-		System.out.println("Desenpilhar " + Pilha02 + "\n ");
+	public static void CarregarFilaStatica(StringBuffer buffer) throws IOException {
+		nomeArq = "Login&Senha.txt";
+		FilaEstatica fila = new FilaEstatica();
+		buffer = BancoModel.LerCarregaLog(buffer, nomeArq);
+		fila.insere(buffer);		
+		JOptionPane.showMessageDialog(null, fila.retira());
 	}
 }

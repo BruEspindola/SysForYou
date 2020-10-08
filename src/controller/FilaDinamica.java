@@ -2,16 +2,15 @@ package controller;
 
 public class FilaDinamica<T> {
 	private NoFD<T> start;
-	NoFD<T> aux;
-	NoFD<T> n;
+	private NoFD<T> aux;
+	private NoFD<T> n;
 
 	public FilaDinamica() {
 		this.start = null;
 	}
-	
+
 	public void add(T dado) {
 		n = new NoFD<T>(dado);
-		
 		if(vazia()) {
 			this.start = n;
 		}else {
@@ -34,7 +33,7 @@ public class FilaDinamica<T> {
 
 	public String mostra() {
 		String r;
-		StringBuffer buffer = new StringBuffer("A lista é: \n");
+		StringBuffer buffer = new StringBuffer();
 		if(!vazia()) {
 			NoFD<T> aux = this.start;
 			while(aux!=null) {
@@ -44,7 +43,7 @@ public class FilaDinamica<T> {
 		}
 		r = buffer.toString();
 		return r;
-	
+
 	}
 
 	private boolean vazia() {

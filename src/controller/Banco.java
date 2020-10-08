@@ -6,13 +6,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
 public class Banco {
 
-	public void GravarLoginSenha(String loginNovo, String senhaNovo) throws IOException {
+	public void GravarLoginSenha(StringBuffer buffer) throws IOException {
 		FileWriter Arq = new FileWriter("Login&Senha.txt");
 		PrintWriter GravArq = new PrintWriter(Arq);
-		GravArq.printf(loginNovo + "\n" + senhaNovo + "\n");
+		GravArq.printf(buffer + "\n");
 		Arq.close();
 
 	}
@@ -24,27 +23,35 @@ public class Banco {
 		Arq.close();
 	}
 
-	public <T> EstruturaEstatica<T> LerPerm(String nomeArq, EstruturaEstatica<T> pilha) throws IOException {		
+	public PilhaEstatica LerPerm(String nomeArq, PilhaEstatica p) throws IOException {		
 		String Arquivo = nomeArq;
 		BufferedReader ler = new BufferedReader(new FileReader(Arquivo));
-		String line = ler.readLine();
-		pilha.adiciona(line);
-		while (line != null) {			
+		String line =ler.readLine();
+		while(line!=null) {
+			p.adicionar(line);
 			line = ler.readLine();
-			pilha.adiciona(line);
 		}
-		pilha.empilha(line);
-		System.out.println(pilha);
 		ler.close();
-
-		return pilha;
+		return p;
 	}
 
-	public String[] LerLog(String[] vet, String nomeArq) throws IOException {
+	public StringBuffer LerCarregaLog(StringBuffer buffer, String nomeArq) throws IOException {
 		String Arquivo = nomeArq;
 		BufferedReader ler = new BufferedReader(new FileReader(Arquivo));
-		for (int i = 0; i < vet.length; i++) {
-			vet[i] = ler.readLine();
+		String line =ler.readLine();
+		while(line!=null) {
+			buffer.append(line + "\n");
+			line = ler.readLine();
+		}
+		ler.close();
+		return buffer;
+	}
+
+	public String[] LerLog (String[] vet, String nomeArq) throws IOException{
+		String Arquivo = nomeArq;
+		BufferedReader ler = new BufferedReader(new FileReader(Arquivo));
+		for(int i=0; i<vet.length; i++) {
+			vet[i] =ler.readLine();
 		}
 		ler.close();
 		return vet;
