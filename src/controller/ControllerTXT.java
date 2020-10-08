@@ -11,7 +11,7 @@ public class ControllerTXT {
 	String senhaNovo;
 	String Vet[] = new String[6];
 	String nomeArq;
-	String pilha[] = new String[3];
+	
 	public ControllerTXT() {
 		super();
 	}
@@ -50,9 +50,7 @@ public class ControllerTXT {
 
 	public void CarregarPilhaStatica() throws IOException {
 		nomeArq = "Permissoes.txt";
-		pilha =  BancoModel.LerPerm(nomeArq, pilha);
-		for(int i = 0; i< pilha.length; i++) {
-			JOptionPane.showMessageDialog(null, "" + pilha[i] + "\n");
-		}
+		PilhaEstatica p = new PilhaEstatica();
+		p =  BancoModel.LerPerm(nomeArq, p);
 	}
 }

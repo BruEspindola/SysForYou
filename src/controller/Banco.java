@@ -6,6 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.swing.JOptionPane;
+
 
 public class Banco {
 
@@ -24,14 +26,17 @@ public class Banco {
 		Arq.close();
 	}
 
-	public String[] LerPerm(String nomeArq, String[] pilha) throws IOException {		
+	public PilhaEstatica LerPerm(String nomeArq, PilhaEstatica p) throws IOException {		
 		String Arquivo = nomeArq;
 		BufferedReader ler = new BufferedReader(new FileReader(Arquivo));
-		for (int i = 0; i < pilha.length; i++) {
-			pilha[i] = ler.readLine();
+		String line =ler.readLine();
+		while(line!=null) {
+			p.adicionar(line);
+			line = ler.readLine();
 		}
 		ler.close();
-		return pilha;
+		System.out.println(""+p);
+		return p;
 	}
 
 	public String[] LerLog(String[] vet, String nomeArq) throws IOException {
