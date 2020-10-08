@@ -3,7 +3,7 @@ package controller;
 
 import javax.swing.JOptionPane;
 
-class PilhaEstatica {
+public class PilhaEstatica {
 
     int inicio;
     int fim;
@@ -53,7 +53,7 @@ class PilhaEstatica {
     public void mostrar() { //mostra a pilha
         String elementos = "";
         for (int i = fim; i >= 0; i--) {
-            elementos += p[i] + " - ";
+            elementos += p[i] + "\n";
         }
         JOptionPane.showMessageDialog(
                 null,
