@@ -24,18 +24,13 @@ public class Banco {
 		Arq.close();
 	}
 
-	public <T> EstruturaEstatica<T> LerPerm(String nomeArq, EstruturaEstatica<T> pilha) throws IOException {		
+	public String[] LerPerm(String nomeArq, String[] pilha) throws IOException {		
 		String Arquivo = nomeArq;
 		BufferedReader ler = new BufferedReader(new FileReader(Arquivo));
-		String line = ler.readLine();
-		pilha.adiciona(line);
-		while (line != null) {			
-			line = ler.readLine();
-			pilha.adiciona(line);
+		for (int i = 0; i < pilha.length; i++) {
+			pilha[i] = ler.readLine();
 		}
-		pilha.empilha(line);
 		ler.close();
-
 		return pilha;
 	}
 

@@ -5,22 +5,19 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 
 import controller.ControllerTXT;
-import controller.EstruturaEstatica;
-import controller.FilaDinamica;
 
 
 public class Login {
 
 	public void viewLogin() throws IOException {
 		Menu menu = new Menu();
-		ControllerTXT controlBanco = new ControllerTXT();
+		ControllerTXT controlTxT = new ControllerTXT();
 		String login;
 		String senha;
 		String Permissao;
 		login = JOptionPane.showInputDialog("Insira o seu login: ");
 		senha = JOptionPane.showInputDialog("Insira o sua senha: ");
-		Permissao = controlBanco.ValidarLoginSenhaTXT(login, senha);
-		controlBanco.ValidarPermissoesTXT(Permissao);
+		Permissao = controlTxT.ValidarLoginSenhaTXT(login, senha);
 		if(Permissao != null && Permissao !="0") {
 			menu.ViewMenu(Permissao);
 		}else {

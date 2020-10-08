@@ -48,12 +48,12 @@ public class FilaDinamica<T> {
 	
 	//metodo para colocar a pilha, recebe uma estatica, esvazia ela colocando
 	//na fila
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public void addPilha(Pilha pilha) {
-		while(!pilha.estaVazia()) {
-			add((T) pilha.desempilha());
-		}
-	}
+	//@SuppressWarnings({ "unchecked", "rawtypes" })
+	//public void addPilha(Pilha pilha) {
+	//while(!pilha.estaVazia()) {
+	//add((T) pilha.desempilha());
+	//}
+	//}
 
 	private boolean vazia() {
 		return this.start == null;

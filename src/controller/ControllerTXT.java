@@ -5,15 +5,13 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 
 public class ControllerTXT {
-	FilaDinamica<String> fila = new FilaDinamica<String>();
-	Pilha<String> pilha = new Pilha<String>();
-	
+
 	Banco BancoModel = new Banco();
 	String loginNovo;
 	String senhaNovo;
 	String Vet[] = new String[6];
 	String nomeArq;
-
+	String pilha[] = new String[3];
 	public ControllerTXT() {
 		super();
 	}
@@ -50,33 +48,11 @@ public class ControllerTXT {
 		return permissao;
 	}
 
-	public void ValidarPermissoesTXT(String permissao) throws IOException {
+	public void CarregarPilhaStatica() throws IOException {
 		nomeArq = "Permissoes.txt";
-		pilha = (Pilha<String>) BancoModel.LerPerm(nomeArq, pilha);
-		CarregaFila();
-		int i = 0;
-		do {
-			if (pilha.equals(permissao)) {
-				switch (permissao) {
-				case "GETI":
-					JOptionPane.showMessageDialog(null, "Bem vindo coordenado do GETI");
-					break;
-				case "CPS":
-					JOptionPane.showMessageDialog(null, "Bem vindo membro do CPS");
-					break;
-				case "CRA":
-					JOptionPane.showMessageDialog(null, "Bem vindo membro do CRA");
-					break;
-				}
-				i += 3;
-			} else {
-				i++;
-			}
-		} while (i < Vet.length);
-	}
-
-	private void CarregaFila() {
-		fila.addPilha(pilha);
-		System.out.println(fila.mostra());
+		pilha =  BancoModel.LerPerm(nomeArq, pilha);
+		for(int i = 0; i< pilha.length; i++) {
+			JOptionPane.showMessageDialog(null, "" + pilha[i] + "\n");
+		}
 	}
 }

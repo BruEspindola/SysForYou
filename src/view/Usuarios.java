@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import javax.swing.JOptionPane;
 
-import controller.PilhaDinamica;
+
 import controller.classeAbstrata;
 
 
@@ -12,7 +12,6 @@ import controller.classeAbstrata;
 public class Usuarios {
 
 	public void ViewUsuarios(String permissao) throws IOException {
-		PilhaDinamica pilha = new PilhaDinamica();
 		Menu voltar = new Menu();
 		String login;
 		String senha;
@@ -39,10 +38,10 @@ public class Usuarios {
 				//}else{
 				break;
 			case 2:
-				System.out.println("O cargo " + pilha.pop() + " foi removido");
+				
 				break;
 			case 3: 
-				pilha.print();
+				
 				break;
 			case 4:
 
