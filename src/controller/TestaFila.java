@@ -11,7 +11,7 @@ public class TestaFila {
 //		fila.insere(5);
 //		fila.insere(6);
 //		fila.insere(7);
-		while (!fila.isEmpty()) {//enquanto ela n�o for vazia
+		while (!fila.isEmpty()) {
 			Object x = fila.retira();
 			System.out.println("Elemento " + x + " retirado");
 		}

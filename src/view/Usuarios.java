@@ -36,7 +36,7 @@ public class Usuarios {
 				login = JOptionPane.showInputDialog("Insira um novo login:");
 				senha = JOptionPane.showInputDialog("Insira uma nova senha:");
 				controlTxT.CarregarPilhaStatica();
-				perm = JOptionPane.showInputDialog("Insira o nivel de permiss√£o para este usuario:");
+				perm = JOptionPane.showInputDialog("Insira o nivel de permiss„o para este usuario:");
 				buffer.append(login +"\n");
 				buffer.append(senha +"\n");
 				buffer.append(perm +"\n");

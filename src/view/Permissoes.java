@@ -15,10 +15,10 @@ public class Permissoes {
 		//fila.getFilaDinamica();
 		int opc = 0;
 		while(opc!=9) {
-			opc = Integer.parseInt(JOptionPane.showInputDialog("Menu permiss√µes:\n"
+			opc = Integer.parseInt(JOptionPane.showInputDialog("Menu permissıes:\n"
 					+ "1- Adicionar \n"
 					+ "2- Remover ultimo item adicionado \n"
-					+ "3- Mostrar Itens que ser√£o adicionados \n"
+					+ "3- Mostrar Itens que ser„o adicionados \n"
 					+ "4- Gravar no Banco \n"
 					+ "5- Mostrar itens cadastrados no banco \n"
 					+ "9- Sair \n"));

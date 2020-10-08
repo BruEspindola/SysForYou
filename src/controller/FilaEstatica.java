@@ -15,7 +15,7 @@ public class FilaEstatica {
 	
 	public void insere(StringBuffer buffer) {
 		if (isFull()) {
-			throw new RuntimeException("Fila Cheia! Nï¿½o da pra inserir mais nada!");
+			throw new RuntimeException("Fila Cheia! Não da pra inserir mais nada!");
 		}
 		objetos[ultimo] = buffer;
 		ultimo = (ultimo +1) % objetos.length;
@@ -39,17 +39,7 @@ public class FilaEstatica {
 	
 	public boolean isFull() {
 		return total == objetos.length ;
-//		if (true) {
-//			int[] variavel = new int[n];
-//		}
+
 	}
-//	
-//	private void garantaEspaco() {
-//        if (totalDeObjetos == objetos.length) {
-//            Object[] novoVetor = new Object[objetos.length * 2];
-//            for (int i = 0; i < objetos.length; i++) {
-//                novoVetor[i] = objetos[i];
-//            }
-//            objetos = novoVetor;
-//        }
+
 }	

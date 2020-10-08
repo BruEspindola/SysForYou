@@ -21,7 +21,7 @@ public class Login {
 		if(Permissao != null && Permissao !="0") {
 			menu.ViewMenu(Permissao);
 		}else {
-			JOptionPane.showMessageDialog(null, "login ou senha incorretos, permiss√£o negada!");
+			JOptionPane.showMessageDialog(null, "login ou senha incorretos, permiss„o negada!");
 		}
 	}
 }

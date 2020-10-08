@@ -25,7 +25,7 @@ public class PilhaDinamica {
 			Object i = -1;
 
 			if (vazia()) {
-				System.out.println("ERRO! Lista v�zia");
+				System.out.println("ERRO! Lista vazia");
 			} else {
 				i = inicio.Dado;
 				inicio = inicio.prox;

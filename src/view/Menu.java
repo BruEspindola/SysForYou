@@ -11,11 +11,11 @@ public class Menu {
 	public void ViewMenu(String permissao) throws IOException {
 		MenuController controlMenu = new MenuController();
 		int escolha;
-		// JOptionPane.showMessageDialog(null, "Tamo no menu, sua permissão é: " + permissao);
+		
 		switch(permissao) {
 		case "GETI":
 			escolha= Integer.parseInt(JOptionPane.showInputDialog("Menu:\n"
-					+ "1- lista de permissões \n"
+					+ "1- lista de permiss�es \n"
 					+ "2- lista de usuarios \n"
 					+ "3- consultar editais \n"
 					+ "9- Sair \n"));
